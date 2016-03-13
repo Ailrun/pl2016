@@ -16,10 +16,14 @@ Eval compute in 3 * 5.
 Eval compute in 3+5*6.
 
 Fixpoint factorial (n:nat) : nat := 
-  GIVEUP.
+  match n with
+    | O => S O
+    | S n' => n * factorial n'
+  end
+.
 
 Example test_factorial1:          (factorial 3) = 6.
-exact GIVEUP. Qed.
+Proof. reflexivity. Qed.
 Example test_factorial2:          (factorial 5) = 10 * 12.
-exact GIVEUP. Qed.
+Proof. reflexivity. Qed.
 (** [] *)
